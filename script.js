@@ -63,11 +63,32 @@ function tweetQuote() {
 // Export quote as PNG image
 async function exportQuote() {
   try {
-    // Capture quote box element as canvas
-    const element = document.querySelector(".quote-box");
-    const canvas = await html2canvas(element);
+    // Create a temporary container for the quote and author
+    const tempContainer = document.createElement("div");
+    tempContainer.style.position = "absolute";
+    tempContainer.style.left = "-9999px"; // Move off-screen
+    tempContainer.style.backgroundColor = "#000"; // Match your background color
+    tempContainer.style.padding = "20px"; // Add padding
+    tempContainer.style.borderRadius = "10px"; // Match your styling
 
-    // Create temporary download link
+    // Clone the quote and author elements
+    const quoteText = document.getElementById("quote-text").cloneNode(true);
+    const quoteAuthor = document.getElementById("quote-author").cloneNode(true);
+
+    // Append the cloned elements to the temporary container
+    tempContainer.appendChild(quoteText);
+    tempContainer.appendChild(quoteAuthor);
+
+    // Add the temporary container to the DOM
+    document.body.appendChild(tempContainer);
+
+    // Capture the temporary container as an image
+    const canvas = await html2canvas(tempContainer);
+
+    // Remove the temporary container from the DOM
+    document.body.removeChild(tempContainer);
+
+    // Create a download link
     const link = document.createElement("a");
     link.download = "quote.png"; // Set filename
     link.href = canvas.toDataURL(); // Convert canvas to data URL
