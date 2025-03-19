@@ -23,6 +23,7 @@ body {
 }
 
 .quote-box {
+  user-select: none;
   background: rgba(0, 0, 0, 0.8);
   padding: 2rem;
   border-radius: 10px;
