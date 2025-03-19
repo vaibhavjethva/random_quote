@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s ease;
+  font-family: "Arial", sans-serif;
+  background-color: #000;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.quote-box {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(247, 104, 2, 0.934);
+  border: 2px solid #ffa500;
+}
+
+.quote-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #ffa500;
+}
+
+.quote-author {
+  text-align: right;
+  font-style: italic;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background: #ff8c00;
+  color: black;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ff4500;
+}
+
+@media (max-width: 480px) {
+  .quote-text {
+    font-size: 1.2rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Quotes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="quote-box">
+            <p class="quote-text" id="quote-text">Loading quote...</p>
+            <p class="quote-author" id="quote-author"></p>
+            <div class="buttons">
+                <button onclick="copyQuote()">📋 Copy</button>
+                <button onclick="getNewQuote()">✨ New Quote</button>
+                <button onclick="tweetQuote()">🐦 Tweet</button>
+                <button onclick="exportQuote()">📷 Export</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
